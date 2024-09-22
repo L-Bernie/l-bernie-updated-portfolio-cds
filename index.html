@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon Design System with CDN and SCSS</title>
+  
+  <!-- Carbon Design System CDN for CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/@carbon/styles/css/styles.css">
+
+  <link rel="stylesheet" href="dist/styles.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.12.0/accordion.min.js"></script>
+  <script src="https://unpkg.com/carbon-components/scripts/carbon-components.min.js"></script>
+  <script src="src/js/loader.js"></script>
+  <script src="src/js/hamburger.js"></script>
+  <script src="src/js/text-fix-loc.js"></script>
+  <script src="src/js/tagcloud.js"></script>
+  <script src="src/js/scroll-animation.js"></script>
+  <script src="src/js/onscroll.js"></script>
+  </head>
+  <body>
+    <!-- Loader--> 
+    <div id="loader-container">
+      <div id="loader">
+        <div id="loader-content">
+          <div id="loader-text">
+            <span id="loader-progress">0</span>
+          </div>
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <header class="bx--header">
+      <!-- Mobile hamburger menu -->
+      <button
+        class="bx--header__menu-trigger bx--header__action"
+        id="menu-toggle"
+      >
+        <svg
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+          class="bx--navigation-menu"
+          width="20"
+          height="20"
+          viewBox="0 0 32 32"
+        >
+          <path d="M4 6h24v2H4zm0 9h24v2H4zm0 9h24v2H4z"></path>
+        </svg>
+      </button>
+
+      <!-- Logo/Brand Name -->
+      <a class="bx--header__name" href="index.html"> L-BERNIE </a>
+      <div id="overlay"></div>
+      <!-- Navbar Menu -->
+      <nav class="bx--header__nav" id="navbar-menu">
+        <ul class="bx--header__menu-bar">
+          <li class="bx--header__menu-item">
+            <a class="bx--header__menu-item" href="#hero">Home</a>
+          </li>
+          <li class="bx--header__menu-item">
+            <a class="bx--header__menu-item" href="#about">About</a>
+          </li>
+          <li class="bx--header__menu-item">
+            <a class="bx--header__menu-item" href="#projects">Projects</a>
+          </li>
+          <li class="bx--header__menu-item">
+            <a class="bx--header__menu-item" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+
+    <div class="hero" id="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Hi I'm Bernie!</h1> <br>
+        <p class="hero-description">Passionate and dedicated web & software developer with a flair for creating visually stunning and highly functional websites. With a deep understanding of HTML, CSS, and JavaScript, I bring your digital dreams to life with seamless user experiences and cutting-edge design.</p>
+        <button class="bx--btn bx--btn--primary" onclick="scrollToContact()">
+          Contact Me
+      </button>
+      </div>
+      <div class="hero-image">
+        
+      </div>
+    </div>
+
+    <section class="full-width-section1">
+      <div class="animated-background">
+        <p class="animated-text">Crafting digital experiences with <br><span id="dynamic-text">passion</span></p>
+      </div>
+    </section>
+    
+    <div class="right-column-heading" id="about">
+        <h1>01 About</h1>   
+    </div>
+
+    <section class="profile-section">
+      <!-- First Area: Profile Picture -->
+      <div class="profile-picture-area">
+          <div class="profile-circle">
+              <img src="dist/imgs/IMG_4708.webp" alt="Profile Picture">
+          </div>
+      </div>
+      
+      <!-- Second Area: Story and Life Description -->
+      <div class="profile-description-area">
+          <p>"I really want to become a developer"</p><h2> because I enjoy it</h2>
+          <p>
+            My journey as a developer began in a small computer shop, where I sat for hours, captivated by the glow of screens and the endless possibilities they offered. Inspired by the challenge of recreating Flappy Bird as FlappyBern, I dove into HTML, CSS, and JavaScript, each minor success igniting a fire within me. As I learned back-end technologies and explored new frameworks, I pushed myself to take on ambitious projects, like building websites for local businesses and contributing to open-source endeavors. Although the road was filled with frustration and sleepless nights, I embraced challenges as opportunities for growth. Today, that initial spark has transformed into a lifelong passion for learning and creation, driving me to continually seek out new horizons in the ever-evolving world of technology.
+          </p>
+      </div>
+      
+      <div class="full-width-container">
+        <div class="card-row">
+          <div class="card">
+            <img src="dist/imgs/20240922184604.gif" alt="FlappyBern Image" class="card-image">
+            <h3 class="card-title">FlappyBern</h3>
+            <p class="card-description">Sitting in a computer shop, I felt the spark of creativity that led me to build my first game—a fun twist on Flappy Bird. This project ignited my journey into web development.</p>
+        </div>        
+        <div class="card">
+          <img src="dist/imgs/tictactoe.gif" alt="TicTacToe Image" class="card-image">
+          <h3 class="card-title">Unbeatable TicTacToe</h3>
+          <p class="card-description">This classic game pushed me to challenge my skills against the computer's intelligence, enhancing my problem-solving abilities and teaching me the value of logic in coding.</p>
+      </div>      
+        <div class="card">
+          <img src="dist/imgs/christmas.webp" alt="Christmas Tree Image" class="card-image">
+          <h3 class="card-title">Christmas Tree Program</h3>
+          <p class="card-description">This festive C program created an animated Christmas tree for a holiday letter, igniting my passion for backend development and enhancing my attention to design detail.</p>
+      </div>
+      </div>
+    </div>
+    </section>
+  
+    <div class="right-column-heading">
+        <h1>02 Skills and Mastery</h1>   
+    </div>
+
+    <div class="full-width-section2">
+        
+      <div class="grid">
+          <div class="left-column">
+              <div class="black-background">
+                  <h2>Throughout of being developer</h2>
+                  <p class="section2-p">I very eager to learn more and grow in the industry.</p>
+
+
+                  <div id="Container">
+                    <canvas width="750" height="700" id="myCanvas">
+                      <ul>
+                        <li><a href="#">HTML5</a></li>
+                        <li><a href="#">CSS3</a></li>
+                        <li><a href="#">Javascript</a></li>
+                        <li><a href="#">Sql</a></li>
+                        <li><a href="#">MySQL</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">GIT</a></li>
+                        <li><a href="#">Json</a></li>
+                        <li><a href="#">PHP</a></li>
+                        <li><a href="#">C#</a></li>
+                        <li><a href="#">WebDev</a></li>
+                        <li><a href="#">Solidity</a></li>
+                        <li><a href="#">VB.net</a></li>
+                        <li><a href="#">PhotoShop</a></li>
+                        <li><a href="#">Illustrator</a></li>
+                        <li><a href="#">Webflow</a></li>
+                        <li><a href="#">Figma</a></li>
+                        <li><a href="#">MSAccess</a></li>
+                        <li><a href="#">MSVisualStudio</a></li>
+                        <li><a href="#">API's</a></li>
+                        <li><a href="#">Power BI</a></li>
+                        <li><a href="#">WordPress</a></li>
+                        <li><a href="#">Blockchain Tech</a></li>
+                        <li><a href="#">Smart Contract</a></li>
+                        <li><a href="#">Project Management</a></li>
+                        <li><a href="#">Vue JS</a></li>
+                        <li><a href="#">Trello</a></li>
+                        <li><a href="#">JIRA</a></li>
+                        <li><a href="#">SoftDev</a></li>
+                        <li><a href="#">Grpahic Design</a></li>
+                        <li><a href="#">React</a></li>
+                      </ul>
+                    </canvas>
+                  </div>
+
+              </div>
+          </div>
+
+          
+
+          <div class="right-column">
+            <div class="skills">
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5 Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>HTML5</span>
+                      <span class="percentage">90%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3 Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>CSS3</span>
+                      <span class="percentage">99%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>JavaScript</span>
+                      <span class="percentage">85%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>SQL / MySQL</span>
+                      <span class="percentage">80%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>GitHub</span>
+                      <span class="percentage">70%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/git/F05032" alt="Git Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Git</span>
+                      <span class="percentage">75%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/json/000000" alt="JSON Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>JSON</span>
+                      <span class="percentage">60%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>PHP</span>
+                      <span class="percentage">80%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/c/00599C" alt="C Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>C#</span>
+                      <span class="percentage">70%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/dev.to/0A192F" alt="Dev Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>WebDev</span>
+                      <span class="percentage">65%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/solidity/363636" alt="Solidity Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Solidity</span>
+                      <span class="percentage">70%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/.net/0078D6" alt="VB.net Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>VB.net</span>
+                      <span class="percentage">65%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/adobephotoshop/31A8FF" alt="Photoshop Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Photoshop</span>
+                      <span class="percentage">75%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/adobeillustrator/FF9A00" alt="Illustrator Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Illustrator</span>
+                      <span class="percentage">70%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/webflow/4353FF" alt="Webflow Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Webflow</span>
+                      <span class="percentage">80%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Figma</span>
+                      <span class="percentage">85%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/htmlacademy/A4373A" alt="MS Access Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>MSAccess</span>
+                      <span class="percentage">60%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/circle/5C2D91" alt="MS Visual Studio Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>MSVS</span>
+                      <span class="percentage">70%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/apifox/003545" alt="API Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>APIs</span>
+                      <span class="percentage">65%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/hatenabookmark/F2C811" alt="Power BI Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Power BI</span>
+                      <span class="percentage">70%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>WordPress</span>
+                      <span class="percentage">75%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/blockchaindotcom/121D33" alt="Blockchain Tech Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Blockchain Tech</span>
+                      <span class="percentage">60%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn-icons-png.flaticon.com/512/10383/10383022.png" alt="Smart Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Smart Contract</span>
+                      <span class="percentage">65%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/asana/F06A6A" alt="Project Management Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Project Management</span>
+                      <span class="percentage">70%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/vue.js/4FC08D" alt="Vue.js Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Vue JS</span>
+                      <span class="percentage">75%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/trello/0079BF" alt="Trello Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Trello</span>
+                      <span class="percentage">70%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/jira/0052CC" alt="JIRA Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>JIRA</span>
+                      <span class="percentage">60%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn-icons-png.flaticon.com/512/1179/1179642.png" alt="Software Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>SoftDev</span>
+                      <span class="percentage">65%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/adobe/FF0000" alt="Graphic Design Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>Graphic Design</span>
+                      <span class="percentage">70%</span>
+                  </div>
+              </div>
+              <div class="skill">
+                  <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React Icon" class="skill-icon">
+                  <div class="skill-info">
+                      <span>React</span>
+                      <span class="percentage">80%</span>
+                  </div>
+              </div>
+          </div>
+          
+      
+        
+          </div>
+    </div>
+    </div>
+
+    <div class="right-column-heading" id="projects">
+      <h1>03 Projects</h1>
+    </div> 
+
+    <section class="projects-section bx--grid">
+
+        <!-- Project 1 -->
+        <div class="project bx--row">
+          <div class="bx--col-lg-1 bx--col-md-2 bx--col-sm-1">
+            <div class="project-icon"><img src="dist/imgs/icons/P1.webp" /></div>
+          </div>
+          <div class="bx--col-lg-5 bx--col-md-6 bx--col-sm-5">
+            <h4 class="project-title">4PNOY: Ayuda Management and Compliance Monitoring System</h4>
+          </div>
+          <div class="bx--col-lg-6 bx--col-md-4 bx--col-sm-6">
+            <p class="project-description">The 4PNOY Ayuda Management and Compliance Monitoring System is designed to streamline the management of aid programs and ensure compliance with regulatory standards. This system enables efficient tracking of resources, beneficiary information, and program performance metrics. By integrating features such as real-time reporting, Blockchain technology, automated notifications, and user-friendly dashboards, it enhances transparency and accountability in aid distribution. This solution aims to support organizations in effectively managing their programs while meeting compliance requirements and community impact.</p>
+            <div class="bx--tag">HTML/CSS</div>
+            <div class="bx--tag">Javascript</div>
+            <div class="bx--tag">PHP</div>
+            <div class="bx--tag">Blockchain</div>
+            <div class="bx--tag">JSON/JQuery</div>
+            <div class="bx--tag">SMS API</div>
+            <div class="bx--tag">Solidity</div>
+            <div class="bx--tag">MySQL</div>
+            <div class="bx--tag">Etc...</div>
+          </div>
+        </div>
+      
+        <!-- Project 2 -->
+        <div class="project bx--row">
+          <div class="bx--col-lg-1 bx--col-md-2 bx--col-sm-1">
+            <div class="project-icon"><img src="dist/imgs/icons/P2.webp" /></div>
+          </div>
+          <div class="bx--col-lg-5 bx--col-md-6 bx--col-sm-5">
+            <h4 class="project-title">Project Management System</h4>
+          </div>
+          <div class="bx--col-lg-6 bx--col-md-4 bx--col-sm-6">
+            <p class="project-description"> A Project Management System is a tool that helps plan, organize, and manage resources and tasks to achieve project goals efficiently and effectively.</p>
+            <div class="bx--tag">C#</div>
+            <div class="bx--tag">MSSQL</div>
+            <div class="bx--tag">Visual Studio</div>
+            <div class="bx--tag">QR API</div>
+            <div class="bx--tag">Software Design</div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project bx--row">
+            <div class="bx--col-lg-1 bx--col-md-2 bx--col-sm-1">
+              <div class="project-icon"><img src="dist/imgs/icons/P3.webp" /></div>
+            </div>
+            <div class="bx--col-lg-5 bx--col-md-6 bx--col-sm-5">
+              <h4 class="project-title">S-MART</h4>
+            </div>
+            <div class="bx--col-lg-6 bx--col-md-4 bx--col-sm-6">
+              <p class="project-description">A (POS) system is a solution that manages sales transactions, inventory, and customer data, streamlining the process and business operations.</p>
+              <div class="bx--tag">HTML/CSS</div>
+              <div class="bx--tag">Javascript</div>
+              <div class="bx--tag">PHP</div>
+              <div class="bx--tag">MySQL</div>
+            </div>
+        </div>
+
+          <!-- Project 5 -->
+        <div class="project bx--row">
+            <div class="bx--col-lg-1 bx--col-md-2 bx--col-sm-1">
+              <div class="project-icon"><img src="dist/imgs/icons/P4.webp" /></div>
+            </div>
+            <div class="bx--col-lg-5 bx--col-md-6 bx--col-sm-5">
+              <h4 class="project-title">Yeppeuda Grill Online Ordering System</h4>
+            </div>
+            <div class="bx--col-lg-6 bx--col-md-4 bx--col-sm-6">
+              <p class="project-description">An ordering system allows customers to order products or services serves by Yeppeuda Grill.</p>
+              <div class="bx--tag">HTML/CSS</div>
+              <div class="bx--tag">Javascript</div>
+              <div class="bx--tag">PHP</div>
+              <div class="bx--tag">MySQL</div>
+              <div class="bx--tag">Forecasting</div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+        <div class="project bx--row">
+            <div class="bx--col-lg-1 bx--col-md-2 bx--col-sm-1">
+              <div class="project-icon"><img src="dist/imgs/icons/P5.webp" /></div>
+            </div>
+            <div class="bx--col-lg-5 bx--col-md-6 bx--col-sm-5">
+              <h4 class="project-title">Bottle and Paper Recycling Sytsem</h4>
+            </div>
+            <div class="bx--col-lg-6 bx--col-md-4 bx--col-sm-6">
+              <p class="project-description">A recycling system processes waste materials for reuse.</p>
+              <div class="bx--tag">HTML/CSS</div>
+              <div class="bx--tag">Javascript</div>
+              <div class="bx--tag">PHP</div>
+              <div class="bx--tag">MySQL</div>
+            </div>
+        </div>
+
+        <div class="project bx--row">
+          <div class="bx--col-lg-1 bx--col-md-2 bx--col-sm-1">
+            <div class="project-icon"><img src="dist/imgs/icons/P6.webp" /></div>
+          </div>
+          <div class="bx--col-lg-5 bx--col-md-6 bx--col-sm-5">
+            <h4 class="project-title">Patient Aid System</h4>
+          </div>
+          <div class="bx--col-lg-6 bx--col-md-4 bx--col-sm-6">
+            <p class="project-description"> A nurse call system enables patients to request assistance from healthcare staff.</p>
+              <div class="bx--tag">HTML/CSS</div>
+              <div class="bx--tag">Javascript</div>
+              <div class="bx--tag">JSON</div>
+              <div class="bx--tag">Arduino</div>
+              <div class="bx--tag">PHP</div>
+              <div class="bx--tag">MySQL</div>
+          </div>
+        </div>
+
+        <div class="project bx--row">
+          <div class="bx--col-lg-1 bx--col-md-2 bx--col-sm-1">
+            <div class="project-icon"><img src="dist/imgs/icons/P7.webp" /></div>
+          </div>
+          <div class="bx--col-lg-5 bx--col-md-6 bx--col-sm-5">
+            <h4 class="project-title">Ordering System</h4>
+          </div>
+          <div class="bx--col-lg-6 bx--col-md-4 bx--col-sm-6">
+            <p class="project-description"> An ordering system facilitates the placement and management of store.</p>
+              <div class="bx--tag">HTML/CSS</div>
+              <div class="bx--tag">Javascript</div>
+              <div class="bx--tag">PHP</div>
+              <div class="bx--tag">MySQL</div>
+            </div>
+        </div>
+
+        <div class="project bx--row">
+          <div class="bx--col-lg-1 bx--col-md-2 bx--col-sm-1">
+            <div class="project-icon"><img src="dist/imgs/icons/P10.webp" /></div>
+          </div>
+          <div class="bx--col-lg-5 bx--col-md-6 bx--col-sm-5">
+            <h4 class="project-title"> Aarna Water Station POS System</h4>
+          </div>
+          <div class="bx--col-lg-6 bx--col-md-4 bx--col-sm-6">
+            <p class="project-description">  A Web System tracks water availability, selling, and Buying adding a comprehensive POS and Ledging.</p>
+              <div class="bx--tag">HTML/CSS</div>
+              <div class="bx--tag">Javascript</div>
+              <div class="bx--tag">PHP</div>
+              <div class="bx--tag">MySQL</div>
+          </div>
+        </div>
+
+        <div class="project bx--row">
+          <div class="bx--col-lg-1 bx--col-md-2 bx--col-sm-1">
+            <div class="project-icon"><img src="dist/imgs/icons/P78.webp" /></div>
+          </div>
+          <div class="bx--col-lg-5 bx--col-md-6 bx--col-sm-5">
+            <h4 class="project-title">Book Rental System</h4>
+          </div>
+          <div class="bx--col-lg-6 bx--col-md-4 bx--col-sm-6">
+            <p class="project-description">A software that monitors all book rents and receipt management with point of sale built</p>
+              <div class="bx--tag">Visual Studio</div>
+              <div class="bx--tag">Java</div>
+              <div class="bx--tag">Software Design</div>
+              <div class="bx--tag">MSAccess</div>
+          </div>
+        </div>
+
+    </section>
+
+
+    <div class="right-column-heading">
+      <h1>04 Seminars and Certificates</h1>   
+    </div>
+    
+    <section class="certifications">
+      <cds-accordion>
+        <cds-accordion-item title="AppCon Competition">
+          <div class="accordion-content">
+            <div class="grid-container">
+              <div class="image-container">
+                  <img src="dist/imgs/certificates/15.webp" alt="Description of Image">
+              </div>
+              <div class="text-container">
+                  <h2>AppCon Competition</h2>
+                  <p>The AppCon Competition is an annual event that brings together innovative minds from around the world to showcase their app development skills. Participants have the opportunity to create and present their mobile or web applications, competing for prizes and recognition.</p>
+              </div>
+                </div>
+                </div>
+            </cds-accordion-item>
+  
+          <cds-accordion-item title="On the Job Training">
+              <div class="accordion-content">
+                <div class="grid-container">
+                  <div class="image-container">
+                      <img src="dist/imgs/certificates/13.webp" alt="Description of Image">
+                  </div>
+                  <div class="text-container">
+                      <h2>Baranggay 178 Zone 16 OJT - Admin Assistant</h2>
+                      <p>As an Admin Assistant for Baranggay 178 Zone 16, you will play a crucial role in supporting the local government’s administrative operations. This on-the-job training (OJT) position provides an opportunity to gain hands-on experience in managing office tasks, assisting with community programs, and enhancing communication within the barangay.</p>
+                  </div>
+              </div>
+              </div>
+          </cds-accordion-item>
+          
+          <cds-accordion-item title="Data Analytics with AWS">
+            <div class="accordion-content">
+              <div class="grid-container">
+                <div class="image-container">
+                    <img src="dist/imgs/certificates/16.webp" alt="Description of Image">
+                </div>
+                <div class="text-container">
+                    <h2>Data Analytics with AWS</h2>
+                    <p>This course on Data Analytics with AWS provided me with the skills to leverage cloud technologies for data analysis. I learned how to use AWS services such as Amazon S3, Redshift, and QuickSight to collect, store, and visualize data effectively. The curriculum covered essential concepts in data modeling, querying databases, and creating dashboards, enabling me to derive insights from complex datasets. This experience has equipped me to tackle real-world data challenges and make data-driven decisions in a cloud environment.</p>
+                </div>
+            </div>
+            </div>
+        </cds-accordion-item>
+
+          <cds-accordion-item title="Software Development Career">
+            <div class="accordion-content">
+              <div class="grid-container">
+                <div class="image-container">
+                    <img src="dist/imgs/certificates/12.webp" alt="Description of Image">
+                </div>
+                <div class="text-container">
+                    <h2>Software Development</h2>
+                    <p>I have completed the "Introduction to Career Skills in Software Development" certification, which provided me with essential skills and foundational knowledge in software development. This course covered key topics such as coding principles, software methodologies, and effective teamwork, equipping me to pursue a successful career in the tech industry.</p>
+                </div>
+            </div>
+            </div>
+        </cds-accordion-item>
+
+        <cds-accordion-item title="Hyper Connected City Logistic">
+          <div class="accordion-content">
+            <div class="grid-container">
+              <div class="image-container">
+                  <img src="dist/imgs/certificates/0.webp" alt="Description of Image">
+              </div>
+              <div class="text-container">
+                  <h2>Hyper Connected City Logistics</h2>
+                  <p>Successfully participate in advance research intitute for informatics, computing and networking. Enable to learn the physical internet and how AI used in procurement process of business.</p>
+              </div>
+          </div>
+          </div>
+      </cds-accordion-item>
+
+      <cds-accordion-item title="SDLC Software Developemnt">
+        <div class="accordion-content">
+          <div class="grid-container">
+            <div class="image-container">
+                <img src="dist/imgs/certificates/1.webp" alt="Description of Image">
+            </div>
+            <div class="text-container">
+                <h2>SDLC Software Development vs Agile Developement</h2>
+                <p>Understanding the differences between the Software Development Life Cycle (SDLC) and Agile Development is crucial for aspiring developers and project managers. SDLC is a structured approach that outlines the phases of software development, including requirements gathering, design, implementation, testing, deployment, and maintenance. It emphasizes thorough documentation and a sequential process, which can be beneficial for projects with well-defined requirements.</p>
+            </div>
+        </div>
+        </div>
+    </cds-accordion-item>
+
+  <cds-accordion-item title="Capstone Research Conference">
+    <div class="accordion-content">
+      <div class="grid-container">
+        <div class="image-container">
+            <img src="dist/imgs/certificates/3.webp" alt="Description of Image">
+        </div>
+        <div class="text-container">
+            <h2>Capstone Research Conference</h2>
+            <p>The Capstone Research Conference was a valuable experience that allowed us to showcase our projects and engage with peers in our field. Our group was proud to receive awards for "Most Organized Group" and "Best Presentation," reflecting our dedication to collaboration and effective communication of our research findings.</p>
+        </div>
+    </div>
+    </div>
+  </cds-accordion-item>
+
+  <cds-accordion-item title="Graphic Designing">
+    <div class="accordion-content">
+      <div class="grid-container">
+        <div class="image-container">
+            <img src="dist/imgs/certificates/4.webp" alt="Description of Image">
+        </div>
+        <div class="text-container">
+            <h2>Photoshop 2021 essential Training</h2>
+            <p>In the Photoshop 2021 Essential Training, I gained a solid foundation in graphic design principles and techniques. I learned how to navigate the interface, utilize essential tools for editing and retouching images, and apply various effects and filters to enhance visual compositions. The course also covered advanced topics like layer management, color correction, and typography, enabling me to create professional-quality designs and improve my overall creative workflow.</p>
+        </div>
+    </div>
+    </div>
+  </cds-accordion-item>
+
+  <cds-accordion-item title="Cloud Computing">
+    <div class="accordion-content">
+      <div class="grid-container">
+        <div class="image-container">
+            <img src="dist/imgs/certificates/5.webp" alt="Description of Image">
+        </div>
+        <div class="text-container">
+            <h2>Beyod the horizon: The future of Cloud Computing</h2>
+            <p>This exploration of the future of cloud computing delves into emerging trends and technologies that are shaping the digital landscape. Key topics include the rise of hybrid and multi-cloud environments, advancements in AI and machine learning integration, and the growing importance of security and compliance in cloud solutions. By examining these developments, we can understand how cloud computing will continue to transform business operations, enhance scalability, and drive innovation across various industries.</p>
+        </div>
+    </div>
+    </div>
+  </cds-accordion-item>
+
+  <cds-accordion-item title="Vue JS Seminar">
+    <div class="accordion-content">
+      <div class="grid-container">
+        <div class="image-container">
+            <img src="dist/imgs/certificates/6.webp" alt="Description of Image">
+        </div>
+        <div class="text-container">
+            <h2>Vue 3: Front End Programming</h2>
+            <p>This course on Vue 3 focused on building dynamic user interfaces using the latest features of the framework. I learned about the Composition API, reactive data binding, and component-based architecture, which enhance the development process. Additionally, the course covered state management with Vuex, routing with Vue Router, and best practices for optimizing performance. This knowledge has equipped me to create robust, scalable applications and improved my skills in modern front-end development.</p>
+        </div>
+    </div>
+    </div>
+  </cds-accordion-item>
+
+  <cds-accordion-item title="CloudScape 360">
+    <div class="accordion-content">
+      <div class="grid-container">
+        <div class="image-container">
+            <img src="dist/imgs/certificates/7.webp" alt="Description of Image">
+        </div>
+        <div class="text-container">
+            <h2>Cloud Computing: The future of technology</h2>
+            <p>This discussion on cloud computing examines its transformative impact on modern technology. Key topics include the shift towards serverless architectures, the rise of edge computing, and the increasing reliance on AI and machine learning for data analysis. I explored how cloud solutions enhance scalability, flexibility, and cost efficiency for businesses, while also addressing challenges such as security and data privacy. Understanding these trends equips me to better navigate the evolving tech landscape and leverage cloud technologies effectively.</p>
+        </div>
+    </div>
+    </div>
+  </cds-accordion-item>
+
+  <cds-accordion-item title="Adobe Firefly">
+    <div class="accordion-content">
+      <div class="grid-container">
+        <div class="image-container">
+            <img src="dist/imgs/certificates/8.webp" alt="Description of Image">
+        </div>
+        <div class="text-container">
+            <h2>Generative Ai using the Adobe Firefly</h2>
+            <p>This course on generative AI with Adobe Firefly explored innovative ways to create and enhance visual content. I learned how to harness the power of AI to generate images, text effects, and other design elements, streamlining the creative process. The course covered various tools and features within Firefly, allowing me to experiment with different styles and techniques. This experience has enriched my understanding of how AI can be integrated into design workflows, enabling me to produce unique and impactful visual content.</p>
+        </div>
+    </div>
+    </div>
+  </cds-accordion-item>
+
+  <cds-accordion-item title="Cyber Hygine">
+    <div class="accordion-content">
+      <div class="grid-container">
+        <div class="image-container">
+            <img src="dist/imgs/certificates/9.webp" alt="Description of Image">
+        </div>
+        <div class="text-container">
+            <h2>Cyber Hygine and  Digital Citizenship</h2>
+            <p>This course on Cyber Hygiene and Digital Citizenship emphasized the importance of maintaining safe and responsible online practices. I learned about protecting personal information, recognizing online threats, and implementing effective security measures to safeguard against cyber attacks. The course also covered the principles of digital citizenship, including ethical behavior, respectful communication, and the impact of digital footprints. This knowledge empowers me to navigate the digital world responsibly and advocate for safe online practices in my community.</p>
+        </div>
+    </div>
+    </div>
+  </cds-accordion-item>
+
+  <cds-accordion-item title="Design System">
+    <div class="accordion-content">
+      <div class="grid-container">
+        <div class="image-container">
+            <img src="dist/imgs/certificates/11.webp" alt="Description of Image">
+        </div>
+        <div class="text-container">
+            <h2>Graphic Designing with Design System</h2>
+            <p>This course on Graphic Designing with Design System provided me with a comprehensive understanding of creating cohesive visual designs. I learned how to develop and utilize design systems that ensure consistency across projects, covering components like typography, color palettes, and layout grids. The course emphasized best practices for collaboration between designers and developers, streamlining the design process and enhancing user experience. This experience has equipped me with the skills to produce high-quality, user-centered designs that align with brand identity.</p>
+        </div>
+    </div>
+    </div>
+  </cds-accordion-item>
+
+  <cds-accordion-item title="Web Developement Design">
+    <div class="accordion-content">
+      <div class="grid-container">
+        <div class="image-container">
+            <img src="dist/imgs/certificates/14.webp" alt="Description of Image">
+        </div>
+        <div class="text-container">
+            <h2>Front End Developemnt: Web Design</h2>
+            <p>This course on Front End Development focused on the principles of effective web design and user interface (UI) development. I learned about HTML, CSS, and JavaScript to create responsive and visually appealing websites. The curriculum emphasized best practices for layout design, accessibility, and user experience (UX), enabling me to build sites that are both functional and aesthetically pleasing. This experience has strengthened my ability to translate design concepts into interactive web applications, enhancing my skills as a front-end developer.</p>
+        </div>
+    </div>
+    </div>
+  </cds-accordion-item>
+      </cds-accordion>
+    </section>
+  
+    
+  
+  
+
+
+
+    <div class="right-column-heading">
+      <h1>05 Contact</h1>   
+    </div>
+
+    <footer class="bx--grid footer" id="contact">
+      <div class="bx--row bx--no-gutter">
+
+        <!-- Fourth Column: More Info -->
+        <div class="bx--col-lg-3 bx--col-md-4 bx--col-sm-6 bx--col-sm-12">
+          <h4>Get to Know Me</h4>
+          <p>Stay connected and discover what's new in my world of development!</p>
+        </div>
+
+          <!-- First Column: Get in Touch -->
+          <div class="bx--col-lg-3 bx--col-md-4 bx--col-sm-6 bx--col-sm-12">
+              <h4>Get in touch</h4>
+              <ul class="contact-info">
+                <li>Email: <a href="mailto:bernie@example.com">largo.bernie.a@gmail.com</a></li>
+                <li>Phone: <a href="tel:+639281876131">+639281876131</a></li>
+                <li>Location: <span>Caloocan North, Manila Philippines</span></li>
+              </ul>
+          </div>
+  
+          <!-- Second Column: Connect with Me -->
+          <div class="bx--col-lg-3 bx--col-md-4 bx--col-sm-6 bx--col-sm-12">
+              <h4>Connect with Me</h4>
+              <ul class="social-icons">
+                  <li><a href="https://www.facebook.com/bernie.largo.1"><i class="fab fa-facebook"></i> Facebook</a></li>
+                  <li><a href="https://www.instagram.com/bernielalala/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                  <li><a href="https://www.linkedin.com/in/bernie-largo-0726aa233"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+              </ul>
+          </div>
+  
+          <!-- Third Column: Quick Links -->
+          <div class="bx--col-lg-3 bx--col-md-4 bx--col-sm-6 bx--col-sm-12">
+              <h4>Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+          </div>
+      </div>
+
+  
+    </footer>
+      
+  
+  
+
+    
+    <div class="cursor"></div>
+    
+    
+  </body>
+  </html>

@@ -1,0 +1,693 @@
+@import '../node_modules/carbon-components/scss/globals/scss/styles.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: url('../dist/imgs/cursor--2.svg'), auto;
+  -webkit-user-drag: none;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+#loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../dist/imgs/carbon-banner.webp');  
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Ensures the loader is on top */
+
+
+
+    #loader-content {
+      text-align: center;
+      --webkit-user-select: none;
+
+      #loader-text {
+        font-size: 10em;
+        font-weight: bold;
+        color: $text-primary;
+        margin-bottom: 10px; /* Space between text and progress bar */
+    }
+    }
+
+    .progress-bar {
+      width: 100px;
+      height: 2px;
+      background-color: $button-primary;
+      margin: 20px auto 0;
+      position: relative;
+    }
+
+    &.slide-up {
+      animation: slide-up 2s forwards; /* Apply slide-up animation */
+    }
+  
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#loader-container.hide {
+  animation: slide-up 2s forwards; /* Apply fade-out animation to the container */
+}
+
+/* Default navbar display for desktop and tablet */
+.bx--header {
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  position: sticky;
+
+  &__nav {
+    display: flex;
+  }
+
+  &__menu-trigger {
+    display: none; /* Hide on desktop/tablet */
+  }
+
+  &__name {
+    font-size: 1rem;
+    text-align: center;  
+    padding: 0 16px;
+  }
+
+  ~ .bx--content {
+    margin-top: 0px;
+  }
+}
+.bx--header__name{
+  background-color: $button-primary;
+}
+.bx--content {
+  padding: 0px;
+}
+
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+  align-items: center;
+  padding: 50px;
+  border-radius: 10px; /* Add border radius */
+  overflow: hidden; /* Ensures any child elements respect the border radius */
+  background-color: $background-hover; /* Customize as needed */
+  background-size: fill;
+  background-image: url('../dist/imgs/carbon-banner.webp');
+  height: 55vw;
+}
+
+.hero-content {
+  max-width: 100%;
+}
+
+.hero-title {
+  font-size: 5vw;
+  font-weight: 600;
+}
+
+.hero-description {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+.hero-image{
+  background-repeat: no-repeat;
+  height: 55vw;
+  background-size: contain;
+  object-fit: cover;
+  background-image: url('../dist/imgs/IMG1.webp'); 
+}
+
+
+.full-width-section1 {
+  width: 100%; /* Full width */
+  padding: 20px; /* Adjust padding as needed */
+  text-align: center; /* Center the text */
+  
+}
+
+.animated-background{
+  background-image: url('../dist/imgs/pexels-rickyrecap-1563277.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 20px;
+  
+}
+.animated-text {
+  font-size: 6vw; /* Set font size to 10rem */
+  margin: 0; /* Remove margin if not needed */
+  line-height: 1.2; /* Adjust line height for better spacing */
+  color: $white-0;
+}
+#dynamic-text{
+  font-size: 7vw;
+  font-weight: bold;
+}
+@keyframes fall-down {
+  0% {
+      transform: translateY(-20px); /* Start slightly above */
+      opacity: 0; /* Start transparent */
+  }
+  100% {
+      transform: translateY(0); /* End at original position */
+      opacity: 1; /* Fully visible */
+  }
+}
+
+.fall-down {
+  animation: fall-down 0.8s ease-in-out forwards; /* Animation duration */
+}
+
+
+.full-width-section2 {
+  display: flex;
+  justify-content: center; /* Center the grid */
+  padding: 20px;
+  width: 100%; /* Full width for the section */
+  /*background:url('../dist/imgs/carbon-banner.webp');  Background color for the section */
+}
+.section2-p{
+  margin-bottom: 30px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  width: 100%; /* Make grid full width */
+  gap: 20px; /* Space between columns */
+}
+
+.left-column {
+  flex: 1;
+}
+
+.black-background {
+  background-color: $text-primary;
+  color: $white-0;
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px;
+  text-align: center; /* Center text */
+  font-size: 1.7vh;
+  height: 100%;
+}
+
+.right-column {
+  flex: 1;
+  align-content: center;
+}
+.right-column-heading{
+  padding: 20px;
+}
+.right-column h2 {
+  margin-bottom: 10px; /* Spacing for heading */
+  padding: 10px;
+}
+
+#myCanvas{
+  width: 50%;
+}
+
+.skills {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items */
+  background: white; /* Card background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.skill-icon {
+  width: 40px; /* Adjust icon size */
+  height: 40px;
+  margin-bottom: 10px; /* Space below icon */
+}
+
+h3 {
+  margin: 0; /* Remove default margin */
+  font-size: 1.2rem; /* Title font size */
+}
+
+.mastery {
+  margin-top: 5px; /* Space above mastery text */
+  font-size: 1rem; /* Mastery text size */
+  color: $text-primary; /* Slightly darker color for mastery text */
+}
+
+.skill {
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+
+.skill-icon {
+  width: 40px; /* Adjust icon size */
+  height: 40px;
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.skill-info {
+  display: flex;
+  flex-direction: column; /* Stack name and percentage */
+  font-weight: bold;
+}
+
+.percentage {
+  font-weight: normal;
+}
+
+
+
+.projects-section {
+  padding: 20px;
+  background-color: #ffffff;
+  width: 100%;
+  max-width: none;
+}
+
+.project {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px 0;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.project-icon {
+  width: 100px;
+  height: 100px;
+  background-color: $text-primary;
+  border-radius: 4px;
+}
+
+.project-icon img {
+  width: inherit;
+  height: inherit;
+  background-size: cover;
+  object-fit: cover;
+}
+
+
+.project-title {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem; /* Add margin for spacing */
+}
+
+
+
+.project-link:hover,
+.project:hover .project-link {
+  color: $link-primary; /* Change link color on hover */
+}
+
+.project:hover .project-title,
+.project:hover .project-icon {
+  color: $link-primary; /* Change title and icon color on hover */
+}
+
+/* Change icon background color on hover */
+.project:hover .project-icon {
+  background-color: $link-primary; /* Change icon background to blue */
+}
+
+
+
+
+/* General Section Styling */
+.profile-section {
+  padding: 40px 0;
+  text-align: center;
+  background-image: url('../dist/imgs/carbon-banner.webp');
+}
+
+/* First Area: Circle with Profile Picture */
+.profile-picture-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.profile-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* Second Area: Story and Life Description */
+.profile-description-area {
+  padding: 40px;
+}
+
+.profile-description-area h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.profile-description-area p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: $text-primary;
+}
+
+.full-width-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap */
+}
+
+.card {
+  flex: 1 1 calc(30% - 20px); /* Default: three cards in a row with spacing */
+  margin: 10px; /* Adjust spacing between cards */
+  border-color: $text-primary;
+  border:solid 1px;
+  text-align: left; /* Center text inside card */
+}
+.card-title {
+  margin: 10px; /* Adjust margin for spacing */
+  font-weight: 600;
+}
+
+.card-description {
+  text-align: justify; /* Justifies the text */
+  margin: 10px;
+}
+.card-image {
+  width: 100%;
+  height: 400px; /* Set a fixed height */
+  object-fit: cover; /* This ensures the image scales nicely */
+}
+
+
+.certifications{
+  margin-bottom: 50px;
+}.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Adjusts column sizes */
+  gap: 20px; /* Space between columns */
+  width: 100%;
+  margin: 20px auto; /* Centers the grid */
+}
+
+.image-container img {
+  width: 100%; /* Makes image responsive */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+}
+
+h2 {
+  margin: 0 0 10px; /* Adjusts margin */
+}
+
+p {
+  margin: 0; /* Removes default margin */
+}
+
+
+.footer {
+  background-color: $text-primary; 
+  padding: 50px;
+  color: $background-hover;
+  width: 100%;
+  max-width: none;
+}
+
+.footer h4 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: $white-0; 
+}
+
+.footer-links, .social-icons, .contact-info {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li, .social-icons li, .contact-info li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a, .social-icons a, .contact-info a {
+  color: $white-0; 
+  text-decoration: none;
+}
+
+.footer-links a:hover, .social-icons a:hover, .contact-info a:hover {
+  color: $button-primary; 
+}
+
+.footer .bx--row {
+  max-width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+@media(max-width: 1080px){
+  .skills{
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+  }
+  #myCanvas{
+    width: 80%;
+  }
+  
+}
+
+/* Mobile styles (max-width: 768px) */
+@media (max-width: 768px) {
+  .bx--header__menu-trigger {
+    display: inline-block;
+    position: absolute;
+    right: 20px; /* Align hamburger to the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    width: 30px;
+    height: 30px;
+  }
+
+  .bx--header__menu-trigger svg {
+    transition: transform 0.3s ease;
+  }
+
+  .bx--header__menu-trigger.active svg {
+    transform: rotate(90deg); /* Rotate icon for X effect */
+  }
+
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    opacity: 0; /* Start hidden */
+    visibility: hidden; /* Ensure it's not clickable */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition */
+    z-index: -1; /* Ensure it’s below the loader but above the content */
+  }
+
+  #overlay.active {
+    opacity: 1; /* Make visible */
+    visibility: visible; /* Allow interaction */
+  }
+
+  .bx--header__nav {
+    display: none; /* Hide nav by default */
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: $text-primary;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+    opacity: 0; /* Start with invisible */
+    transform: translateY(-20px); /* Start with the menu above its final position */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animate opacity and transform */
+    z-index: 9990; /* Ensure it’s above the overlay */
+  }
+
+  .bx--header__nav.active {
+    display: block; /* Ensure it's displayed when active */
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Move it to its final position */
+  }
+
+  .bx--header__menu-bar {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ensure ul takes full width */
+    display: flex; /* Use flexbox for vertical layout */
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .bx--header__menu-item {
+    width: 100%; /* Ensure li takes full width */
+
+    a {
+      display: block; /* Make each link take up the full width of its parent li */
+      padding: 15px; /* Adjust padding as needed */
+      text-decoration: none;
+      font-size: 16px; /* Adjust font size as needed */
+      text-align: center; /* Center the text */
+      box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+      width: 100%; /* Ensure links fill the li width */
+    }
+    }
+
+    .animated-background{
+          flex-wrap: wrap;
+          display: flex;
+          align-items: center;
+          align-content: center;
+          height: 80vw;
+          width: 100%;
+          background-position: center;
+    }
+    .grid {
+      grid-template-columns: 1fr; /* Stack columns vertically */
+    }
+
+    .skill-card {
+      padding: 10px;
+    }
+
+    .black-background {
+      font-size: 1.5vh;
+    }
+    .section2-p{
+      font-size: 0.9rem;
+    }
+    #Container{
+      margin-top: 0px;
+    }
+    #myCanvas{
+      width: 50%;
+    }
+    .project {
+      flex-direction: column; /* Stack items vertically */
+      align-items: flex-start; /* Align items to start */
+    }
+    .bx--col-lg-1,
+    .bx--col-lg-5,
+    .bx--col-lg-6 {
+      flex-basis: 100%; /* Make all columns full width */
+      max-width: 100%; /* Ensure full width */
+    }
+    .card {
+      flex: 1 1 100%; /* One card per row on smaller screens */
+    }
+    .footer .bx--col-lg-4 {
+      padding-bottom: 2rem;
+    }
+    .flex-container {
+      flex-direction: column; /* Stack items vertically */
+    }
+
+    .grid-container {
+      grid-template-columns: 1fr; /* Stack items vertically */
+    }
+    
+    .hero {
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full height to ensure vertical centering */
+      padding: 20px; /* Adjust padding for smaller screens */
+    }
+  
+    .hero-image{
+      align-content: center;
+    }
+}
+
+
+@media (max-width: 481px) {
+  .skills {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for skill cards */
+  }
+  .hero {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto auto; /* Image on top, text below */
+    text-align: center; /* Center text */
+    
+    /* Center the hero content vertically and horizontally */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height to ensure vertical centering */
+    padding: 20px; /* Adjust padding for smaller screens */
+    display: flex;
+  }
+
+  .hero-text {
+    max-width: 90%; /* Optional: limit text width for better readability on small screens */
+  }
+  .hero-image{
+    display: none;
+  }
+}

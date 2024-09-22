@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@carbon/layout": "^11.26.0",
+    "@carbon/styles": "^1.65.0",
+    "@carbon/web-components": "^2.13.1",
+    "carbon-components": "^10.58.15"
+  },
+  "devDependencies": {
+    "sass": "^1.79.1"
+  },
+  "scripts": {
+    "build-css": "sass src/styles.scss dist/styles.css",
+    "watch-css": "sass --watch src/styles.scss:dist/styles.css"
+  }
+}
